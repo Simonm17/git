@@ -1,0 +1,108 @@
+""" Accessing the help function """
+git help <verb>  e.g. git help config
+or
+git <verb> --help   e.g. git config --help
+
+
+
+
+""" Print current installed version"""
+git --version
+
+""" Setting your global email/name in your computer """
+git config --global user.name "Ryan Chung"
+git config --global user.email "ryanchuung@gmail.com"
+""" See/check your email/name """
+git config --list
+
+
+""" Create a file/folder """
+touch filename
+mkdir foldername
+""" Remove file/folder """
+rm filename
+rm -r filename
+
+
+""" View Folders and Files in the Directory """
+ls
+""" Print out folders/files within a directory """
+ls -la
+
+
+""" Change directory """
+cd /c/Users/Ho/PycharmProjects/flaskblog
+cd .. <-- move back one file e.g. /c/Users/Ho/PycharmProjects/
+cd ~ <-- move to home directory e.g. /c/Users/Ho
+
+
+
+""" Copy a file """
+cp existfile newfile   e.g. cp existing_file.py copy_file.py
+""" Move/rename file """
+mv existfile newfile
+
+
+""" Open an existing file """
+explorer filename
+explorer .    <-- Open all files and folder in current directory
+NOTE: if it doesn't work, try: open filename
+
+code filename  <-- opens the file with visual code studios
+
+
+""" Initialize a repository from existing code and track the files """
+git init    (make sure you're within the desired directory)
+^ This will make a git directory that will track all work done within the folder
+""" Remove the git directory """
+rm -rf .git
+
+""" check on the files. Red files are not added, green files are added and ready to be committed. """
+git status
+
+
+""" only selecting specific files and ignoring others that may have preferences/personal settings """
+1. Make a gitignore file that will list all the files you want to ignore:
+    - touch .gitignore
+2. Add the filenames of files you want git to ignore e.g. venv     .idea
+3. check and make sure the files are not included in the list of file anymore:
+    - git status
+NOTE: although the .gitignore file will be listed, git will make sure that the file within there are ignored.
+
+""" Add the selected codes in preparation to commit in the staging area """
+git add -A
+
+""" Reset added files"""
+git reset
+git reset filename.py
+
+""" Commit the selected files """
+git commit -m "make a comment here noting your commit" e.g. git commit -m "first commit"
+NOTE: once files are committed, your git status will be cleaned out
+
+""" Checking your log to see your commits """
+git log
+
+""" Track an existing remote project with git """
+git clone <url> <where to clone>
+e.g. git clone <url> .     <-- the . represents the current repository
+
+""" Viewing information about the remote repository """
+git remote -v
+git branch -a
+
+""" Pushing changes to committed files """
+1. git diff   <-- shows the changes between old and new
+2. git add -A
+3. git commit -m "message showing what you changed"
+
+""" Pushing changes """
+1. git pull origin master     <-- pull any changes that have been made since the last pull
+2. git push origin master
+
+ADVANCED:
+
+""" Creating a branch for a desired feature """
+git branch filename
+git checkout filename
+git branch    <-- lists the branches
