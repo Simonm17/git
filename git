@@ -97,6 +97,8 @@ git branch -a
 3. git commit -m "message showing what you changed"
 
 3a. git remote add origin https://github.com/Simonm17/merus.git
+3b. if you accidentially put wrong url, you can change by doing the following:
+3c. git remote set-url origin https://github.com/Simonm17/merus.git
 
 """ Pushing changes """
 1. git pull origin master     <-- pull any changes that have been made since the last pull
