@@ -109,7 +109,14 @@ note: <origin>  <- remote repo  <master> <- branch
 
 ADVANCED:
 
-""" Creating a branch for a desired feature """
+""" Creating a new branch """  you'd want to do this if you're working at a big company and don't want to push changes to the maste
 git branch drname  (creates a new branch/folder apart from master for you to work on)
 git checkout drname (switches workflow from master to the new branch created by git branch drname)
 git branch    <-- lists the branches
+
+""" Merging a branch ""
+1. switch to master branch: git checkout master
+2. pull any changes: git pull origin master
+3. check for any merged branches: git branch --merged
+4. merge branches you want merged: git merge drname
+5. push final changes: git push origin master
