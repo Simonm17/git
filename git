@@ -110,6 +110,6 @@ note: <origin>  <- remote repo  <master> <- branch
 ADVANCED:
 
 """ Creating a branch for a desired feature """
-git branch filename
-git checkout filename
+git branch drname  (creates a new branch/folder apart from master for you to work on)
+git checkout drname (switches workflow from master to the new branch created by git branch drname)
 git branch    <-- lists the branches
