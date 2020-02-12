@@ -83,13 +83,11 @@ NOTE: once files are committed, your git status will be cleaned out
 """ Checking your log to see your commits """
 git log
 
-""" Track an existing remote project with git """
+""" clone a repo into an empty folder """  if you try cloning into a folder with files, it will throw an error
 git clone <url> <where to clone>
 e.g. git clone <url> .     <-- the . represents the current repository
 
-""" Viewing information about the remote repository """
-git remote -v
-git branch -a
+
 
 """ Pushing changes to committed files """
 1. git diff   <-- shows the changes between old and new
@@ -108,6 +106,10 @@ note: <origin>  <- remote repo  <master> <- branch
 #NOTE: when creating a repo from github.com, don't check "create readme" file
 
 ADVANCED:
+
+git remote -v   view remote branches
+git branch -a   view local branches
+
 
 """ Creating a new branch """  you'd want to do this if you're working at a big company and don't want to push changes to the maste
 git branch drname  (creates a new branch/folder apart from master for you to work on)
