@@ -19,9 +19,11 @@ git config --list
 """ Create a file/folder """
 touch filename
 mkdir foldername
-""" Remove file/folder """
+""" Remove file """
 rm filename
 rm -r filename
+""" Remove folder """
+rmdir foldername
 
 
 """ View Folders and Files in the Directory """
