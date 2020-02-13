@@ -99,6 +99,9 @@ e.g. git clone <url> .     <-- the . represents the current repository
 3a. git remote add origin https://github.com/Simonm17/merus.git
 3b. if you accidentially put wrong url, you can change by doing the following:
 3c. git remote set-url origin https://github.com/Simonm17/merus.git
+if you want to remove the repository:
+git remote rm origin
+
 
 """ Pushing changes """
 note: <origin>  <- remote repo  <master> <- branch
