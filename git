@@ -19,11 +19,14 @@ git config --list
 """ Create a file/folder """
 touch filename
 mkdir foldername
+
 """ Remove file """
-rm filename
-rm -r filename
+rm filename   #removes file from staging area
+rm -r filename  #removes modified file that is already added to staging area
+
 """ Remove folder """
-rmdir foldername
+rmdir foldername  #only works with empty folders
+rm -rf foldername  #deletes folders with existing files
 
 
 """ View Folders and Files in the Directory """
