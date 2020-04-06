@@ -9,6 +9,7 @@ git <verb> --help   e.g. git config --help
 """ Print current installed version"""
 git --version
 
+
 """ Setting your global email/name in your computer """
 git config --global user.name "Ryan Chung"
 git config --global user.email "ryanchuung@gmail.com"
@@ -20,9 +21,11 @@ git config --list
 touch filename
 mkdir foldername
 
+
 """ Remove file """
 rm filename   #removes file from staging area
 rm -r filename  #removes modified file that is already added to staging area
+
 
 """ Remove folder """
 rmdir foldername  #only works with empty folders
@@ -41,7 +44,6 @@ cd .. <-- move back one file e.g. /c/Users/Ho/PycharmProjects/
 cd ~ <-- move to home directory e.g. /c/Users/Ho
 
 
-
 """ Copy a file """
 cp existfile newfile   e.g. cp existing_file.py copy_file.py
 """ Move/rename file """
@@ -56,6 +58,15 @@ NOTE: if it doesn't work, try: open filename
 code filename  <-- opens the file with visual code studios
 
 
+""" only selecting specific files and ignoring others that may have preferences/personal settings """
+1. Make a gitignore file that will list all the files you want to ignore:
+    - touch .gitignore
+2. Add the filenames of files you want git to ignore e.g. venv     .idea
+3. check and make sure the files are not included in the list of file anymore:
+    - git status
+NOTE: although the .gitignore file will be listed, git will make sure that the file within there are ignored.
+
+
 """ Initialize a repository from existing code and track the files """
 git init    (make sure you're within the desired directory)
 ^ This will make a git directory that will track all work done within the folder
@@ -66,27 +77,34 @@ rm -rf .git
 git status
 
 
-""" only selecting specific files and ignoring others that may have preferences/personal settings """
-1. Make a gitignore file that will list all the files you want to ignore:
-    - touch .gitignore
-2. Add the filenames of files you want git to ignore e.g. venv     .idea
-3. check and make sure the files are not included in the list of file anymore:
-    - git status
-NOTE: although the .gitignore file will be listed, git will make sure that the file within there are ignored.
-
 """ Add the selected codes in preparation to commit in the staging area """
 git add -A
+
 
 """ Reset added files"""
 git reset
 git reset filename.py
 
+
 """ Commit the selected files """
 git commit -m "make a comment here noting your commit" e.g. git commit -m "first commit"
 NOTE: once files are committed, your git status will be cleaned out
 
+
 """ Checking your log to see your commits """
 git log
+git log --oneline
+
+
+""" Checking out a file from an earlier commit """
+git checkout <commit's number> index.html
+
+
+"""Reset local repo to the end stage commit """
+1. git reset HEAD index.html
+2. git checkout -- index.html
+or
+git reset 
 
 """ clone a repo into an empty folder """  if you try cloning into a folder with files, it will throw an error
 git clone <url> <where to clone>
