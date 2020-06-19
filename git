@@ -142,6 +142,10 @@ git branch drname  (creates a new branch/folder apart from master for you to wor
 git checkout drname (switches workflow from master to the new branch created by git branch drname)
 git branch    <-- lists the branches
 
+    or
+    
+git branch -b newbranch  (creates and switches to a new branch at the same time)
+
 """ Merging a branch """
 1. switch to master branch: git checkout master
 2. pull any changes: git pull origin master
