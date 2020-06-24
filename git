@@ -80,6 +80,9 @@ git status
 """ Add the selected codes in preparation to commit in the staging area """
 git add -A
 
+""" Add a specific file only, not the whole repository """
+git add filename
+
 
 """ Reset added files"""
 git reset
@@ -89,16 +92,31 @@ git reset filename.py
 """ Commit the selected files """
 git commit -m "make a comment here noting your commit" e.g. git commit -m "first commit"
 NOTE: once files are committed, your git status will be cleaned out
+git commit --amend -m "amended message" <-- you can amend messages while committing
+
+""" Viewing commits """
+git show hash
+e.g. git show 0da2f7
+git show HEAD~1  <-- HEAD~<#> shows log of commit based on the number provided. e.g. HEAD~1 shows previous commit
+
+""" viewing detailed commits """
+git annotate filename
+
 
 
 """ Checking your log to see your commits """
 git log
 git log --oneline
+git log filename
+git log foldername
+git log -3  <-- shows the last three commits
 
 
 """ Checking out a file from an earlier commit """
 git checkout <commit's number> index.html
 
+
+git checkout -- filename <-- discard changes that have not yet been staged. Once checked out, discharged changes are gone forever.
 
 """Reset local repo to the end stage commit """
 1. git reset HEAD index.html
@@ -111,9 +129,18 @@ git clone <url> <where to clone>
 e.g. git clone <url> .     <-- the . represents the current repository
 
 
+HEAD refers to the most recent commit
+-r means to a particular version
 
 """ Pushing changes to committed files """
 1. git diff   <-- shows the changes between old and new
+    
+    git diff filename shows specific changes between old and new file
+    git diff -r HEAD
+    
+    git diff hash1..hash2. <-- shows git diff between two specific commits
+    git diff HEAD~1..HEAD~3 <-- show git commits between the last commit and state three commits in the past
+    
 2. git add -A
 3. git commit -m "message showing what you changed"
 
@@ -147,6 +174,11 @@ git branch    <-- lists the branches
 git branch -b newbranch  (creates and switches to a new branch at the same time)
 
 """ Merging a branch """
+
+git merge source destination
+e.g. git merge subbranch master
+
+
 1. switch to master branch: git checkout master
 2. pull any changes: git pull origin master
 3. check for any merged branches: git branch --merged
